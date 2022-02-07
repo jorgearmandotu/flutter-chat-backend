@@ -49,6 +49,9 @@ const crearUsuario = async (req, res = response ) => {
 const login = async (req, res = response ) => {
     const { email, password } = req.body;
 
+    //console.log(email);
+    //console.log(password);
+    //console.log(req);
     try {
         const usuarioDB = await Usuario.findOne({ email });
         if(!usuarioDB ){
@@ -80,13 +83,13 @@ const login = async (req, res = response ) => {
         console.log(error);
         return res.status(500).json({
             ok: false,
-            msg: 'Contacte añ administrador'
+            msg: 'Contacte al administrador'
         })
     }
-    return res.json({
+    /*return res.json({
         ok:true,
-        msg: 'login',
-    })
+        msg: 'login'
+    })*/
 }
 
 const renewtoken = async (req, res=response) => {

@@ -18,7 +18,7 @@ router.post('/new', [
 ], crearUsuario) ;
 
 router.post('/', [
-    check('email', 'El email no se enceuntra registrado').isEmail().normalizeEmail(),
+    check('email', 'El email no es valido').isEmail().normalizeEmail(),
     check('password', 'La contraseña no es valida').isLength({min: 6}),
     validarCampos
 ], login);

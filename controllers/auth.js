@@ -55,7 +55,7 @@ const login = async (req, res = response ) => {
     try {
         const usuarioDB = await Usuario.findOne({ email });
         if(!usuarioDB ){
-            return res.status(400).json({
+            return res.status(404).json({
                 ok: false,
                 msg: 'Email no encontrado'
             });
@@ -92,7 +92,7 @@ const login = async (req, res = response ) => {
     })*/
 }
 
-const renewtoken = async (req, res=response) => {
+const renewtoken = async (req, res = response) => {
 
     const uid = req.uid;
 
